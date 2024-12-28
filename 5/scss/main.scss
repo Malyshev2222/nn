@@ -1,0 +1,53 @@
+$color-danger: red;
+$color-success: green;
+$color-warning: #FFD700;
+.warning{
+    background-color: $color-warning;
+    border: solid 2px $color-danger;
+    font-size: 2rem;
+    width: 400px;
+    height: 50px;
+}
+nav{
+    border: 1px solid black;
+    ul{
+        display: flex;
+        justify-content: space-around;
+        li{
+            padding: 0;
+            margin-right: 20px;
+            font-size: 1.2rem;
+            list-style-type: none;
+            a{
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+$string-before: "<<";
+$string-after:">>";
+.nav{
+   .nav-ul{
+    li{
+        a{
+            &::before{
+                content: $string-before;
+            }
+            &::after{
+                content: $string-after;
+            }
+            &:hover{
+                text-shadow: 2px 2px 1px #00CED1;
+            }
+        }
+    }
+   }
+}
+.adaptive-size{
+    width: 90vw;
+    font-size: unquote("calc(10vw + 1rem)");
+    border: 1px solid black;
+    border-radius: 5px;
+}

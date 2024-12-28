@@ -1,0 +1,20 @@
+$dark-mode: false;
+
+@mixin card{
+    //цвета для светлой темы
+    $primary-color: #D3DA7A;
+    $text-color: #424424;
+
+    @if $dark-mode == true{
+        //если условие сработает, то значения переменных перезапишутся
+        $primary-color: #161625;
+        $text-color: #8181D6;
+    }
+    .card{
+        width: 200px;
+        height: 400px;
+        background: $primary-color;
+        color: $text-color;
+    }
+}
+@include card();

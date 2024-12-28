@@ -1,0 +1,20 @@
+$color-first: black;
+$color-second: #808080;
+
+table{
+    border-collapse: collapse;
+    color: white;
+}
+
+@for $i from 1 to 6{
+    tr:nth-child(#{$i})
+    {
+        @if $i%2==0{
+            background-color: $color-first;
+        }
+        @else{
+            background-color: $color-second;
+        }
+    }
+    
+}

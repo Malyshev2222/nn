@@ -1,0 +1,44 @@
+@mixin flex-align-center{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@mixin button{
+    padding: 0;
+    margin-right: 20px;
+    font-size: 1.2rem;
+    list-style-type: none;
+    a{
+        color: black;
+        text-decoration: none;
+        &:hover{
+            text-shadow: 2px 2px 1px #00CED1;
+        }
+    }
+}
+
+.header{
+    @include flex-align-center();
+}
+.nav{
+    .nav-ul{
+        @include flex-align-center();
+        li{
+            @include button();
+        }
+    }
+}
+.container{
+    @include flex-align-center();
+    align-items: start;
+}
+aside{
+    object-fit: contain;
+}
+aside img{
+    width: 20vw;
+    height: auto;
+}
+.nav-items{
+    @include button();
+}
