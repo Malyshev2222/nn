@@ -26,7 +26,7 @@
 
 1. Клонируйте репозиторий:
     ```bash
-    git clone https://github.com/Malyshev2222/your-repository.git
+    git clone https://github.com/Malyshev2222/nn.git
     ```
 
 2. Откройте проект в вашем редакторе или IDE.
