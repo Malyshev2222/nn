@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-имя:  Deploy static content to Pages
+name: Deploy static content to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -11,12 +11,11 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: читать
-  pages: пиши
-  id-token: пиши
+  contents: read
+  pages: write
+  id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -31,13 +30,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v3
+
       - name: Upload artifact
-        uses:  Использование: действия/загрузка-страницы-артефакт@v3 
+        uses: actions/upload-pages-artifact@v2
         with:
- # Загрузите все хранилище # Upload entire repository
           path: '.'
-      - name:  - имя: Развертывание на страницы GitHub 
-        id:  ID: развертывание 
-        uses:  Использование: действия/страницы развертывания@v4 
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
